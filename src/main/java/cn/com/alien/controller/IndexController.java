@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by HowellYang on 29/6/17 AM11:07.
  * E-Mail:th15817161961@gmail.com
+ * 调用方
  */
 @RestController
 public class IndexController {
@@ -31,9 +32,6 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index() {
-       // String alienConsulAppUrl = loadBalancer.choose("AlienConsulApp").getUri().toString();
         return restTemplate.getForObject("http://AlienConsulApp/indexService", String.class);
-
-       // return "Hello World!Controller";
     }
 }
