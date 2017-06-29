@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexService {
     @RequestMapping("/indexService")
     public String indexService() {
+        System.out.println("in start");
         return "Hello World!Service";
     }
 
