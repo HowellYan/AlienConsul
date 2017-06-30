@@ -7,6 +7,21 @@
     <groupId>cn.com.alien</groupId>
     <artifactId>AlienConsul</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <ratpack.version>1.4.6</ratpack.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,6 +34,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-all</artifactId>
         </dependency>
+        <!-- ratpack -->
+        <dependency>
+            <groupId>io.ratpack</groupId>
+            <artifactId>ratpack-core</artifactId>
+            <version>${ratpack.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.ratpack</groupId>
+            <artifactId>ratpack-spring-boot</artifactId>
+            <version>${ratpack.version}</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
