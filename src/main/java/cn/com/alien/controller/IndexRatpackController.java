@@ -11,9 +11,11 @@ import ratpack.handling.Chain;
  */
 @RestController
 public class IndexRatpackController {
+
     @Bean
     public Action<Chain> index() {
         return chain -> chain .get(ctx ->{
+          //  String consulApp = loadBalancer.choose("AlienConsulApp").getUri().toString();
             ctx.render("Start!");
         });
     }
