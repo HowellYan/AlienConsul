@@ -4,6 +4,7 @@ import com.ecwid.consul.v1.ConsulClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.commons.util.InetUtils;
 import org.springframework.cloud.consul.ConsulProperties;
 import org.springframework.cloud.consul.discovery.ConsulDiscoveryProperties;
@@ -14,6 +15,8 @@ import org.springframework.cloud.consul.serviceregistry.ConsulAutoServiceRegistr
 import org.springframework.cloud.consul.serviceregistry.ConsulServiceRegistry;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.ServletContext;
 
@@ -21,13 +24,17 @@ import javax.servlet.ServletContext;
  * Created by HowellYang on 1/7/17 PM5:10.
  * E-Mail:th15817161961@gmail.com
  */
+@Configuration
 public class ConsulConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public ConsulDiscoveryProperties consulDiscoveryProperties(InetUtils inetUtils) {
         ConsulDiscoveryProperties consulDiscoveryProperties = new ConsulDiscoveryProperties(inetUtils);
         consulDiscoveryProperties.setPort(8090);
-        consulDiscoveryProperties.setIpAddress("127.0.0.1");
+        consulDiscoveryProperties.setIpAddress("localhost");
+        consulDiscoveryProperties.setServiceName("Alien");
+        consulDiscoveryProperties.setHealthCheckUrl("http://localhost:8090/");
+        consulDiscoveryProperties.setHostname("localhost");
         return consulDiscoveryProperties;
     }
 
@@ -78,5 +85,7 @@ public class ConsulConfiguration {
     public TtlScheduler ttlScheduler(ConsulClient consulClient, HeartbeatProperties heartbeatProperties) {
         return new TtlScheduler(heartbeatProperties, consulClient);
     }
+
+
 
 }
