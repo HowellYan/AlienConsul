@@ -19,9 +19,6 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <ratpack.version>1.4.6</ratpack.version>
-    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -45,18 +42,6 @@
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
 
-
-        <!-- ratpack -->
-        <dependency>
-            <groupId>io.ratpack</groupId>
-            <artifactId>ratpack-core</artifactId>
-            <version>${ratpack.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.ratpack</groupId>
-            <artifactId>ratpack-spring-boot</artifactId>
-            <version>${ratpack.version}</version>
-        </dependency>
 
     </dependencies>
 
