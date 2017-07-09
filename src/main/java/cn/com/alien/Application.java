@@ -1,3 +1,5 @@
+package cn.com.alien;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableAutoConfiguration
 @EnableConfigurationProperties
 @EnableDiscoveryClient
-@ComponentScan("cn.com.alien")
+@ComponentScan
 @SpringBootApplication
 public class Application {
     @Bean

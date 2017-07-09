@@ -22,7 +22,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.3.RELEASE</version>
                 <configuration>
-                    <mainClass>Application</mainClass>
+                    <mainClass>cn.com.alien.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>
