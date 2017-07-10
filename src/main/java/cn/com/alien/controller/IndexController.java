@@ -17,9 +17,6 @@ import org.springframework.web.client.RestTemplate;
 public class IndexController {
 
     @Autowired
-    private DiscoveryClient discoveryClient;
-
-    @Autowired
     private RestTemplate restTemplate;
 
     @Autowired
