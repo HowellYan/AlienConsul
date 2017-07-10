@@ -1,18 +1,16 @@
 server:
   port: 9999
-
 spring:
   application:
     name: AlienConsulApp
   cloud:
     consul:
-      port: 8500
-      host: 127.0.0.1
-      enabled: true
       discovery:
         enabled: true
         hostname: 127.0.0.1
         port: 9999
+
+
 
 
 
